@@ -52,8 +52,8 @@ class Category extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'position' => 'Position',
+			'title' => 'Название',
+			'position' => 'Позиция',
 		);
 	}
 
