@@ -28,7 +28,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'category_id'); ?>
-		<?php echo $form->dropDownList($model,'category_id',Category::all()); ?>
+		<?php echo $form->dropDownList($model,'category_id',Category::all(), array('empty'=>'')); ?>
 	</div>
 
 	<div class="row buttons">
