@@ -22,16 +22,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'content'); ?>
-		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'created'); ?>
-		<?php echo $form->textField($model,'created'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'status'); ?>
 		<?php echo $form->textField($model,'status'); ?>
 	</div>

@@ -2,20 +2,13 @@
 /* @var $this PageController */
 /* @var $model Page */
 
-$this->breadcrumbs=array(
-	'Pages'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	'Update',
-);
-
 $this->menu=array(
-	array('label'=>'Журнал Page', 'url'=>array('index')),
-	array('label'=>'Создать Page', 'url'=>array('create')),
-	array('label'=>'Просмотр Page', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Page', 'url'=>array('admin')),
+	array('label'=>'Журнал страниц', 'url'=>array('index')),
+	array('label'=>'Создать страницу', 'url'=>array('create')),
+	array('label'=>'Просмотр страниц', 'url'=>array('view', 'id'=>$model->id)),
 );
 ?>
 
-<h1>Update Page <?php echo $model->id; ?></h1>
+<h1>Редактирование страницы <?php echo $model->id; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

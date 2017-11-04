@@ -111,18 +111,7 @@ class PageController extends Controller
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
 	}
-
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Page');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
+	
 	/**
 	 * Manages all models.
 	 */
