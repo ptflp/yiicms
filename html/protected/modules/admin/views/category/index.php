@@ -42,6 +42,7 @@ $('.search-form form').submit(function(){
 		'position',
 		array(
 			'class'=>'CButtonColumn',
+			'viewButtonOptions' => array('style' => 'display: none;')
 		),
 	),
 )); ?>
