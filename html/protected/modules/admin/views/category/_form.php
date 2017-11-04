@@ -27,7 +27,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'position'); ?>
-		<?php echo $form->textField($model,'position',array('size'=>60,'maxlength'=>88)); ?>
+		<?php echo $form->dropDownList($model,'position',array('top'=>'Верхнее меню','left'=>'Меню слева')); ?>
 		<?php echo $form->error($model,'position'); ?>
 	</div>
 
