@@ -35,15 +35,10 @@
 		<?php echo $form->error($model,'content'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'created'); ?>
-		<?php echo $form->textField($model,'created'); ?>
-		<?php echo $form->error($model,'created'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status'); ?>
+		<?php echo $form->dropDownList($model,'status',array(0=>'Скрыто', 1=>'Доступно')); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 
