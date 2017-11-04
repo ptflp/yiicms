@@ -56,11 +56,11 @@ class Page extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'content' => 'Content',
-			'created' => 'Created',
-			'status' => 'Status',
-			'category_id' => 'Category',
+			'title' => 'Заголовок',
+			'content' => 'Содержание',
+			'created' => 'Дата',
+			'status' => 'Статус',
+			'category_id' => 'Категория',
 		);
 	}
 
