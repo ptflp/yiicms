@@ -66,7 +66,7 @@ class PageController extends Controller
 		{
 			$model->attributes=$_POST['Page'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('index','id'=>$model->id));
 		}
 
 		$this->render('create',array(
