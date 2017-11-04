@@ -2,11 +2,6 @@
 /* @var $this CategoryController */
 /* @var $model Category */
 
-$this->breadcrumbs=array(
-	'Categories'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	'Update',
-);
 
 $this->menu=array(
 	array('label'=>'Журнал категорий', 'url'=>array('index')),
