@@ -87,12 +87,7 @@ class Category extends CActiveRecord
 
 	public function all()
 	{
-		$models = self::model()->findAll();
-		$array = array();
-		foreach ($models as $one) {
-			$array[$one->id]= $one->title;
-		}
-		return $array;
+		return CHtml::listData(self::model()->findAll(),'id','title');
 	}
 	/**
 	 * Returns the static model of the specified AR class.
