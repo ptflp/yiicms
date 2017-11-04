@@ -36,7 +36,10 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+		'id'=>array(
+			'name' => 'id',
+			'headerHtmlOptions' => array('width'=>30)
+		),
 		'title',
 		'created'=>array(
 			'name' => 'created',
