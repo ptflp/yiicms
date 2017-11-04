@@ -29,7 +29,7 @@ class Page extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, content, created, status, category_id', 'required'),
+			array('title, content, status, category_id', 'required'),
 			array('created, status, category_id', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
@@ -92,6 +92,12 @@ class Page extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	public function beforeSave()
+	{
+		if($this->isNewRecord)
+			$this->created = time();
+		return parent::beforeSave();
 	}
 
 	/**
