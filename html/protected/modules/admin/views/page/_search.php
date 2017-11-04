@@ -23,12 +23,12 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'status'); ?>
-		<?php echo $form->textField($model,'status'); ?>
+		<?php echo $form->dropDownList($model,'status',array(''=>'', 0=>'Скрыто', 1=>'Доступно')); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'category_id'); ?>
-		<?php echo $form->textField($model,'category_id'); ?>
+		<?php echo $form->dropDownList($model,'category_id',Category::all()); ?>
 	</div>
 
 	<div class="row buttons">
