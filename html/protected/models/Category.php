@@ -85,6 +85,15 @@ class Category extends CActiveRecord
 		));
 	}
 
+	public function all()
+	{
+		$models = self::model()->findAll();
+		$array = array();
+		foreach ($models as $one) {
+			$array[$one->id]= $one->title;
+		}
+		return $array;
+	}
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
