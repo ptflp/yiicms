@@ -38,7 +38,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->dropDownList($model,'status',array(0=>'Скрыто', 1=>'Доступно')); ?>
+		<?php echo $form->dropDownList($model,'status',array(1=>'Доступно', 0=>'Скрыто')); ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 

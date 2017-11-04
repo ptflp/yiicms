@@ -48,7 +48,7 @@ $('.search-form form').submit(function(){
 		'status' => array(
 			'name' => 'status',
 			'value' => '($data->status==1)?"Доступно":"Скрыто"',
-			'filter' => array(0=>'Скрыто', 1=>'Доступно')
+			'filter' => array(1=>'Доступно', 0=>'Скрыто')
 		),
 		'category_id'=> array(
 			'name' => 'category_id',
