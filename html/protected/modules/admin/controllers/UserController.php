@@ -23,6 +23,10 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view','password'),
+				'users'=>array('*'),
+			),
+			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
@@ -45,6 +49,22 @@ class UserController extends Controller
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+		));
+	}
+	public function actionPassword($id)
+	{
+		$model = $this->loadModel($id);
+
+		if(isset($_POST['password'])) {
+			$model->password = $_POST['password'];
+			if($model->save()) {
+				$this->redirect(array('index','id'=>$model->id));
+			}
+		}
+
+
+		$this->render('password',array(
+			'model'=>$model,
 		));
 	}
 	/**
