@@ -37,9 +37,20 @@ $('.search-form form').submit(function(){
 		'id',
 		'username',
 		'password',
-		'created',
-		'ban',
-		'role',
+		'created'=>array(
+			'name' => 'created',
+			'value' => 'date("j.m.Y H:i", $data->created)'
+		),
+		'ban'=> array(
+			'name' => 'ban',
+			'value' => '($data->ban==1)?"Бан":""',
+			'filter' => array(1=>'Нет', 0=>'Да')
+		),
+		'role'=> array(
+			'name' => 'role',
+			'value' => '($data->role==1)?"User":"Admin"',
+			'filter' => array(1=>'Admin', 0=>'User')
+		),
 		/*
 		'email',
 		*/
