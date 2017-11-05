@@ -31,12 +31,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'created'); ?>
-		<?php echo $form->textField($model,'created'); ?>
-		<?php echo $form->error($model,'created'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'ban'); ?>
 		<?php echo $form->textField($model,'ban'); ?>
 		<?php echo $form->error($model,'ban'); ?>

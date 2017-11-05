@@ -1,15 +1,8 @@
 <?php
-/* @var $this UserController */
-/* @var $model User */
 
-$this->breadcrumbs=array(
-	'Users'=>array('index'),
-	'Manage',
-);
 
 $this->menu=array(
-	array('label'=>'Журнал User', 'url'=>array('index')),
-	array('label'=>'Создание User', 'url'=>array('create')),
+	array('label'=>'Создание пользователей', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +19,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Users</h1>
+<h1>Список пользователей</h1>
 
 
 <?php echo CHtml::link('Расширенный поиск','#',array('class'=>'search-button')); ?>
