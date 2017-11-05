@@ -57,11 +57,11 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'username' => 'Username',
-			'password' => 'Password',
-			'created' => 'Created',
-			'ban' => 'Ban',
-			'role' => 'Role',
+			'username' => 'Имя',
+			'password' => 'Пароль',
+			'created' => 'Зарегистрирован',
+			'ban' => 'Бан',
+			'role' => 'Роль',
 			'email' => 'Email',
 		);
 	}
