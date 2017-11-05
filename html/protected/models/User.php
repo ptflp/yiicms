@@ -96,6 +96,12 @@ class User extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	public function beforeSave()
+	{
+		$this->password = md5($this->password);
+		return parent::beforeSave();
+	}
+
 
 	/**
 	 * Returns the static model of the specified AR class.
