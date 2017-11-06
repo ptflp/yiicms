@@ -1,16 +1,4 @@
 <?php
-/* @var $this CommentController */
-/* @var $model Comment */
-
-$this->breadcrumbs=array(
-	'Comments'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label'=>'Журнал Comment', 'url'=>array('index')),
-	array('label'=>'Создание Comment', 'url'=>array('create')),
-);
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -26,7 +14,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Comments</h1>
+<h1>Журнал комментариев</h1>
 
 
 <?php echo CHtml::link('Расширенный поиск','#',array('class'=>'search-button')); ?>
@@ -41,14 +29,29 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+		'id'=>array(
+			'name' => 'id',
+			'headerHtmlOptions' => array('width'=>30)
+		),
 		'content',
-		'page_id',
-		'created',
-		'user_id',
+		'page_id'=> array(
+			'name' => 'page_id',
+			'value' => '$data->page->title',
+			'filter' => Page::all()
+		),
+		'created'=>array(
+			'name' => 'created',
+			'value' => 'date("j.m.Y H:i", $data->created)'
+		),
+		'user_id'=> array(
+			'name' => 'user_id',
+			'value' => '$data->user->username',
+			'filter' => User::all()
+		),
 		'guest',
 		array(
 			'class'=>'CButtonColumn',
+			'updateButtonOptions'=> array('style' => 'display: none' ),
 		),
 	),
 )); ?>
