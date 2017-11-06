@@ -5,6 +5,13 @@
 /* @var $model Category */
 /* @var $form CActiveForm */
 ?>
+<?php if(Yii::app()->user->hasFlash('setting')): ?>
+
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('setting'); ?>
+</div>
+
+<?php endif;?>
 
 <div class="form">
 

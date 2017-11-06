@@ -12,8 +12,10 @@ class SettingController extends Controller
 		if(isset($_POST['Setting']))
 		{
 			$model->attributes=$_POST['Setting'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()) 
+			{
+				Yii::app()->user->setFlash('setting','Изменения сохранены');
+			}
 		}
 
 		$this->render('index',array(
