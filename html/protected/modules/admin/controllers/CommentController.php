@@ -2,6 +2,7 @@
 
 class CommentController extends Controller
 {
+	public $layout='/layouts/column1';
 
 	/**
 	 * @return array action filters
@@ -113,27 +114,16 @@ class CommentController extends Controller
 	}
 
 	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Comment');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
-	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+	public function actionIndex()
 	{
 		$model=new Comment('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Comment']))
 			$model->attributes=$_GET['Comment'];
 
-		$this->render('admin',array(
+		$this->render('index',array(
 			'model'=>$model,
 		));
 	}
