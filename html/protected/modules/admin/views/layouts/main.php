@@ -33,6 +33,8 @@
 				array('label'=>'Категории', 'url'=>array('/admin/category')),
 				array('label'=>'Страницы', 'url'=>array('/admin/page')),
 				array('label'=>'Пользователи', 'url'=>array('/admin/user')),
+				array('label'=>'Коментарии', 'url'=>array('/admin/comment')),
+				array('label'=>'Настройки', 'url'=>array('/admin/setting')),
 				array('label'=>'Авторизация', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Выход ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
