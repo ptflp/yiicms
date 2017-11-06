@@ -5,3 +5,4 @@ protected/runtime/*
 protected/data/*.db
 themes/classic/views/
 html/protected/runtime/application.log
+html/protected/runtime/gii-1.1.19/ControllerCode.php
