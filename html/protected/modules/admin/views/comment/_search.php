@@ -17,6 +17,11 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'status'); ?>
+		<?php echo $form->dropDownList($model,'status',array(''=>'', 1=>'Доступно', 0=>'Скрыто')); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'content'); ?>
 		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
 	</div>

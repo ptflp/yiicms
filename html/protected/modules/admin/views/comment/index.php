@@ -33,7 +33,11 @@ $('.search-form form').submit(function(){
 			'name' => 'id',
 			'headerHtmlOptions' => array('width'=>30)
 		),
-		'status',
+		'status'=> array(
+			'name' => 'status',
+			'value' => '($data->status==1)?"Доступно":"Скрыто"',
+			'filter' => array(1=>'Доступно', 0=>'Скрыто')
+		),
 		'content',
 		'page_id'=> array(
 			'name' => 'page_id',
