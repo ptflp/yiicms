@@ -51,8 +51,8 @@ class Setting extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'defaultStatusComment' => 'Default Status Comment',
-			'defaultStatusUser' => 'Default Status User',
+			'defaultStatusComment' => 'Статус комментариев по умолчанию',
+			'defaultStatusUser' => 'Статус пользователей по умолчанию',
 		);
 	}
 
