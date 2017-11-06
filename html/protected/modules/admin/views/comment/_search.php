@@ -23,17 +23,12 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'page_id'); ?>
-		<?php echo $form->textField($model,'page_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'created'); ?>
-		<?php echo $form->textField($model,'created'); ?>
+		<?php echo $form->dropDownList($model,'page_id',Page::all(), array('empty'=>'')); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'user_id'); ?>
-		<?php echo $form->textField($model,'user_id'); ?>
+		<?php echo $form->dropDownList($model,'user_id',User::all(), array('empty'=>'')); ?>
 	</div>
 
 	<div class="row">
