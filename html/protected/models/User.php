@@ -106,6 +106,10 @@ class User extends CActiveRecord
 	}
 
 
+	public function all()
+	{
+		return CHtml::listData(self::model()->findAll(),'id','username');
+	}
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
