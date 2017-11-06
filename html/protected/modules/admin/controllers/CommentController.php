@@ -2,7 +2,6 @@
 
 class CommentController extends Controller
 {
-	public $layout='/layouts/column1';
 
 	/**
 	 * @return array action filters
