@@ -46,6 +46,8 @@ class Comment extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'user' => array(self::BELONGS_TO,'User','user_id'),
+			'page' => array(self::BELONGS_TO,'Page','page_id')
 		);
 	}
 
@@ -56,11 +58,11 @@ class Comment extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'content' => 'Content',
-			'page_id' => 'Page',
-			'created' => 'Created',
-			'user_id' => 'User',
-			'guest' => 'Guest',
+			'content' => 'Текст',
+			'page_id' => 'Страницы',
+			'created' => 'Дата',
+			'user_id' => 'Пользователь',
+			'guest' => 'Гость',
 		);
 	}
 
