@@ -34,7 +34,7 @@ class Comment extends CActiveRecord
 			array('content', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, content, page_id, created, user_id, guest', 'safe', 'on'=>'search'),
+			array('id, status, content, page_id, created, user_id, guest', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +63,7 @@ class Comment extends CActiveRecord
 			'created' => 'Дата',
 			'user_id' => 'Пользователь',
 			'guest' => 'Гость',
+			'status' => 'Статус',
 		);
 	}
 
@@ -90,6 +91,7 @@ class Comment extends CActiveRecord
 		$criteria->compare('created',$this->created);
 		$criteria->compare('user_id',$this->user_id);
 		$criteria->compare('guest',$this->guest,true);
+		$criteria->compare('status',$this->status,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

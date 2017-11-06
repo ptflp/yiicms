@@ -33,6 +33,7 @@ $('.search-form form').submit(function(){
 			'name' => 'id',
 			'headerHtmlOptions' => array('width'=>30)
 		),
+		'status',
 		'content',
 		'page_id'=> array(
 			'name' => 'page_id',
