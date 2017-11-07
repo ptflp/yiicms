@@ -2,10 +2,10 @@
 /* @var $this PageController */
 
 $this->breadcrumbs=array(
-	'Page',
+	'Новости - '.$category->title
 );
 ?>
-<?php 
+<?php
 foreach ($models as $one) {
  	echo '<h3>',$one->title,'</h3>';
  } 
