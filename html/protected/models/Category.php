@@ -94,7 +94,7 @@ class Category extends CActiveRecord
 		$models = self::model()->findAllByAttributes(array('position'=>$position));
 		$array= array();
 		foreach ($models as $one) {
-			$array[] = array ('label' => $one->title, 'url'=>array('/'));
+			$array[] = array ('label' => $one->title, 'url'=>array('/page/index/id/'.$one->id));
 		}
 		if ($position=='top') {
 			$array[] = array('label'=>'Вход', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest);
