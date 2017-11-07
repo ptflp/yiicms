@@ -8,4 +8,9 @@ class PageController extends Controller
 		$category = Category::model()->findByPk($id);
 		$this->render('index',array('models'=>$models,'category'=>$category));
 	}
+	public function actionView($id)
+	{
+		$model = Page::model()->findByPk($id);
+		$this->render('view',array('model'=>$model));
+	}
 }
