@@ -3,11 +3,12 @@
 <div class="span-5 last">
 	<div id="sidebar">
 	<?php
+		/*print_r (Category::menu('left'));*/
 		$this->beginWidget('zii.widgets.CPortlet', array(
-			'title'=>'Operations',
+			'title'=>'Категории',
 		));
 		$this->widget('zii.widgets.CMenu', array(
-			'items'=>$this->menu,
+			'items'=>Category::menu('left'),
 			'htmlOptions'=>array('class'=>'operations'),
 		));
 		$this->endWidget();
