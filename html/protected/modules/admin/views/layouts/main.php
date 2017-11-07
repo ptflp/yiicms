@@ -29,7 +29,7 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'Главная', 'url'=>array('/site/index')),
 				array('label'=>'Категории', 'url'=>array('/admin/category')),
 				array('label'=>'Страницы', 'url'=>array('/admin/page')),
 				array('label'=>'Пользователи', 'url'=>array('/admin/user')),
