@@ -8,6 +8,7 @@ $this->breadcrumbs=array(
 <?php
 foreach ($models as $one) {
  	echo '<h3>',$one->title,'</h3>';
+ 	echo substr($one->content,0,260);
  } 
 
 if (!$models) {
