@@ -28,7 +28,7 @@ class SiteController extends Controller
 	public function actionRegistration()
 	{
 		$model=new User;
-
+		$model->scenario='registration';
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
