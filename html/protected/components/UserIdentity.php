@@ -13,6 +13,9 @@ class UserIdentity extends CUserIdentity {
     public function authenticate(){
         // Производим стандартную аутентификацию, описанную в руководстве.
         $user = User::model()->find('LOWER(username)=?', array(strtolower($this->username)));
+        if ($user->ban==0) {
+            die('Ваш пользователь забанен, если вы зарегистрировались первый раз ждите активацию аккаунта');
+        }
         if(($user===null) || (md5($this->password)!==$user->password)) {
             $this->errorCode = self::ERROR_USERNAME_INVALID;
         } else {
