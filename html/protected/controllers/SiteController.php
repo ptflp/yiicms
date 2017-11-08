@@ -44,9 +44,9 @@ class SiteController extends Controller
 			if($model->save())
 			{
 				if ($setting->defaultStatusUser==0) {
-					Yii::app()->user->setFlash('registration','Вы можете авторизоваться');
-				} else {
 					Yii::app()->user->setFlash('registration','Ожидайте подтверждения админа');
+				} else {
+					Yii::app()->user->setFlash('registration','Вы можете авторизоваться');
 				}
 			}
 		}
