@@ -6,6 +6,10 @@ class UserController extends Controller
 	/**
 	 * @return array action filters
 	 */
+
+	/**
+	 * @return array action filters
+	 */
 	public function filters()
 	{
 		return array(
@@ -14,35 +18,19 @@ class UserController extends Controller
 		);
 	}
 
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
 	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','password'),
-				'users'=>array('*'),
-			),
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'index' and 'delete' actions
-				'actions'=>array('index','delete'),
-				'users'=>array('index'),
+				'actions'=>array('index','view','password','update','delete'),	
+				'roles'=>array('2'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
 		);
 	}
+
 
 
 	public function actionView($id)
