@@ -105,7 +105,7 @@ class UserController extends Controller
 		if(isset($_POST['admin'])) {
 			$model = User::model()->updateByPk($_POST['User_id'],array('role'=>2));
 		} else if(isset($_POST['user'])) {			
-			$model = User::model()->updateByPk($_POST['User_id'],array('role'=>1),array('condition'=>'id<>'.Yii::app()->user->id));
+			$model = User::model()->updateByPk($_POST['User_id'],array('role'=>1),array('condition'=>'id<>'.Yii::app()->user->i)d);
 		}
 		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
