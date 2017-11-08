@@ -68,6 +68,7 @@ class User extends CActiveRecord
 			'ban' => 'Бан',
 			'role' => 'Роль',
 			'email' => 'Email',
+			'verifyCode' => 'Верификация',
 		);
 	}
 
