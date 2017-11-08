@@ -17,6 +17,7 @@ class User extends CActiveRecord
 	const ROLE_ADMIN = 'administrator';
 	const ROLE_USER = 'user';
 	const ROLE_BANNED = 'banned';
+	public $verifyCode;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -38,7 +39,7 @@ class User extends CActiveRecord
 			array('username, password, email', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
+			array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements(), 'on'=>'registration'),
 			array('id, username, password, created, ban, role, email', 'safe', 'on'=>'search'),
 		);
 	}
