@@ -4,6 +4,13 @@
 /* @var $model User */
 /* @var $form CActiveForm */
 ?>
+<?php if(Yii::app()->user->hasFlash('registration')): ?>
+
+<div class="flash-success">
+    <?php echo Yii::app()->user->getFlash('registration'); ?>
+</div>
+
+<?php else: ?>
 
 <div class="form">
 
@@ -57,3 +64,4 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+<?php endif; ?>
