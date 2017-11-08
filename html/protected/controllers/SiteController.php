@@ -35,8 +35,20 @@ class SiteController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
+			$setting = Setting::model()->findByPk(1);
+			if ($setting->defaultStatusUser==0) {
+				$model->ban=0;
+			} else {
+				$model->ban=1;
+			}
 			if($model->save())
-				$this->redirect(array('index','id'=>$model->id));
+			{
+				if ($setting->defaultStatusUser==0) {
+					Yii::app()->user->setFlash('registration','Вы можете авторизоваться');
+				} else {
+					Yii::app()->user->setFlash('registration','Ожидайте подтверждения админа');
+				}
+			}
 		}
 
 		$this->render('registration',array(
