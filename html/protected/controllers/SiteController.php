@@ -39,7 +39,7 @@ class SiteController extends Controller
 				$this->redirect(array('index','id'=>$model->id));
 		}
 
-		$this->render('create',array(
+		$this->render('registration',array(
 			'model'=>$model,
 		));
 	}
