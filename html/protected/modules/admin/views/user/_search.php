@@ -23,7 +23,7 @@
 	
 	<div class="row">
 		<?php echo $form->label($model,'ban'); ?>
-		<?php echo $form->dropDownList($model,'ban',array(''=>'', 0=>'Нет', 1=>'Да')); ?>
+		<?php echo $form->dropDownList($model,'ban',array(''=>'', 0=>'Да', 1=>'Нет')); ?>
 	</div>
 
 	<div class="row">
