@@ -105,7 +105,8 @@ class User extends CActiveRecord
 	public function beforeSave()
 	{
 		if ($this->isNewRecord) {
-			$this->ban=0;
+			$this->created=time();
+			$this->role=1;
 		}
 		$this->password = md5($this->password);
 		return parent::beforeSave();
