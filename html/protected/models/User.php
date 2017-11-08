@@ -36,6 +36,7 @@ class User extends CActiveRecord
 		return array(
 			array('username, password, email', 'required'),
 			array('email','email'),
+			array('username','match','pattern'=>'/^([A-Za-z0-9]+)$/u','message'=>'Поле Имя допустимые символы A-Z a-z 0-9'),
 			array('created, ban, role', 'numerical', 'integerOnly'=>true),
 			array('username, password, email', 'length', 'max'=>255),
 			// The following rule is used by search().
