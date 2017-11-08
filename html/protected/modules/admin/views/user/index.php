@@ -28,13 +28,23 @@ $('.search-form form').submit(function(){
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
-
+<?php 
+echo CHtml::form();
+echo CHtml::submitButton('Разбанить',array('name' => 'noban'));
+echo CHtml::submitButton('Бан',array('name' => 'ban'));
+echo '<br>';
+echo CHtml::submitButton('Админ',array('name' => 'admin'));
+echo CHtml::submitButton('Пользователь',array('name' => 'user'));
+ ?>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'user-grid',
+	'selectableRows'=>2,
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
+		array('class'=>'CCheckBoxColumn',
+		'id'=>'User_id'),
 		'username',
 		'password',
 		'created'=>array(
@@ -43,8 +53,8 @@ $('.search-form form').submit(function(){
 		),
 		'ban'=> array(
 			'name' => 'ban',
-			'value' => '($data->ban==1)?"Бан":""',
-			'filter' => array(1=>'Нет', 0=>'Да')
+			'value' => '($data->ban==1)?"":"Бан"',
+			'filter' => array(1=>'Да', 0=>'Нет')
 		),
 		'role'=> array(
 			'name' => 'role',
@@ -59,3 +69,7 @@ $('.search-form form').submit(function(){
 		),
 	),
 )); ?>
+
+<?php 
+echo CHtml::endform();
+ ?>

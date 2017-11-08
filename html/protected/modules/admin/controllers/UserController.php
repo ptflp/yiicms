@@ -97,6 +97,16 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
+		if(isset($_POST['noban'])) {
+			$model = User::model()->updateByPk($_POST['User_id'],array('ban'=>1));
+		} else if(isset($_POST['ban'])) {			
+			$model = User::model()->updateByPk($_POST['User_id'],array('ban'=>0));
+		}
+		if(isset($_POST['admin'])) {
+			$model = User::model()->updateByPk($_POST['User_id'],array('role'=>2));
+		} else if(isset($_POST['user'])) {			
+			$model = User::model()->updateByPk($_POST['User_id'],array('role'=>1),array('condition'=>'id<>'.Yii::app()->user->id));
+		}
 		$model=new User('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['User']))
