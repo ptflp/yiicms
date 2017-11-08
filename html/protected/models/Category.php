@@ -99,12 +99,13 @@ class Category extends CActiveRecord
 		foreach ($models as $one) {
 			$array[] = array ('label' => $one->title, 'url'=>array('/page/index/id/'.$one->id));
 		}
-		if(Yii::app()->user->checkAccess('2')){
-		    $array[] = array('label'=>'Админка', 'url'=>array('/admin'), 'visible'=>!Yii::app()->user->isGuest);
-		}
 		if ($position=='top') {
+			if(Yii::app()->user->checkAccess('2')){
+			    $array[] = array('label'=>'Админка', 'url'=>array('/admin'), 'visible'=>!Yii::app()->user->isGuest);
+			}
 			$array[] = array('label'=>'Вход', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest);
 			$array[] = array('label'=>'Выход ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest);
+			$array[] = array('label'=>'Регистрация', 'url'=>array('/site/registration'), 'visible'=>Yii::app()->user->isGuest);
 		}
 		return $array;
 	}
